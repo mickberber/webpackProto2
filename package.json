@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mickberber/webpackProto2#readme",
   "devDependencies": {
+    "json-loader": "^0.5.4",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }
