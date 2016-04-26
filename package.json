@@ -4,6 +4,7 @@
   "description": "Another webpack prototype",
   "main": "webpack.config.js",
   "scripts": {
+    "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
