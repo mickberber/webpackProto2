@@ -1,3 +1,7 @@
-var greeter = require('./Greeter.js');
+import React from 'react';
+import ReactDOM, {render} from 'react-dom';
+import Greeter from './Greeter.js';
 
-document.getElementById('root').appendChild(greeter());
+import './main.css';
+
+render(<Greeter />, document.getElementById('root'));
