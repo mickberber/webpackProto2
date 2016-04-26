@@ -1,7 +1,14 @@
+import React, { Component } from 'react';
 var greetings = require('./config.json');
 
-module.exports = function() {
-  var greet = document.createElement('div');
-  greet.textContent = greetings.greetText;
-  return greet;
+class Greeter extends Component {
+  render() {
+    return (
+      <div>
+        {greetings.greetText}
+      </div>
+    );
+  }
 };
+
+export default Greeter;
