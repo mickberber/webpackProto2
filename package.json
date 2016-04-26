@@ -4,7 +4,7 @@
   "description": "Another webpack prototype",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack-dev-server --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mickberber/webpackProto2#readme",
   "devDependencies": {
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }
