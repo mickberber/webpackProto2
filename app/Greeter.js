@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-var greetings = require('./config.json');
+import greetings from './config.json';
+import styles from './greeter.css';
 
 class Greeter extends Component {
   render() {
     return (
-      <div>
+      <div className='styles.root'>
         {greetings.greetText}
       </div>
     );

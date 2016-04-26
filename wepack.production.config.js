@@ -2,8 +2,7 @@ var webpack = require('webpack');
 var HTMLWP = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'eval-source-map',
-  entry: __dirname + '/app/main.js',
+  entry: './app/main.js',
   output: {
     path: __dirname + '/build',
     filename: 'bundle.js'
@@ -20,7 +19,7 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /\.css$/,
+        test: /.css$/,
         loader: 'style!css?modules!postcss'
       }
     ]
@@ -32,13 +31,5 @@ module.exports = {
     new HTMLWP({
       template: __dirname + '/app/index.tmpl.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
   ],
-  devServer: {
-    contentBase: './public',
-    colors: true,
-    historyApiFallback: true,
-    inline: true,
-    hot: true
-  }
 }
