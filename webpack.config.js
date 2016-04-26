@@ -1,10 +1,11 @@
 var webpack = require('webpack');
+var HTMLWP = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
   entry: __dirname + '/app/main.js',
   output: {
-    path: __dirname + '/public',
+    path: __dirname + '/build',
     filename: 'bundle.js'
   },
   module: {
@@ -28,12 +29,16 @@ module.exports = {
     require('autoprefixer')
   ],
   plugins: [
-    new webpack.BannerPlugin('Copyright Zlatan.pages')
+    new HTMLWP({
+      template: __dirname + '/app/index.tmpl.html'
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     contentBase: './public',
     colors: true,
     historyApiFallback: true,
-    inline: true
+    inline: true,
+    hot: true
   }
 }
