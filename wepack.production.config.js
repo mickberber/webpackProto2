@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HTMLWP = require('html-webpack-plugin');
+var ETP = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './app/main.js',
@@ -20,7 +21,7 @@ module.exports = {
       },
       {
         test: /.css$/,
-        loader: 'style!css?modules!postcss'
+        loader: ETP.extract('style', 'css?modules!postcss')
       }
     ]
   },
@@ -31,5 +32,8 @@ module.exports = {
     new HTMLWP({
       template: __dirname + '/app/index.tmpl.html'
     }),
-  ],
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new ETP('style.css');
+  ]
 }
